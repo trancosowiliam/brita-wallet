@@ -1,0 +1,1 @@
+Adicionado integracao continua via circleCI ao projeto
