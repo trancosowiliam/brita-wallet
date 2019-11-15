@@ -1,0 +1,38 @@
+ext {
+    versions = [
+            // region Kotlin
+            core_ktx          : "1.1.0",
+            coroutines        : "1.3.2",
+            koin              : "2.0.1",
+
+            // region UI
+            appcompat         : "1.1.0",
+            constraint_layout : "1.1.3",
+            recycler_view     : "1.1.0-rc01",
+            glide             : "4.10.0",
+
+            // region Networking
+            okhttp            : "3.10.0",
+            gson              : "2.8.6",
+            retrofit          : "2.6.2",
+
+            // region Database
+            room   : "2.2.1",
+
+            // region Testing
+            junit             : "4.12",
+            mockito_kotlin    : "2.2.0",
+            test_runner       : "1.2.0",
+            espresso          : "3.2.0"
+    ]
+
+    tools = [
+            minSdkVersion       : 21,
+            compileSdkVersion   : 29,
+            targetSdkVersion    : 29,
+            buildToolsVersion   : "29.0.2",
+            applicationId       : "br.com.britawallet",
+            versionCode         : 00001,
+            versionName         : "0.00.01"
+    ]
+}
