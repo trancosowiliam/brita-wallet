@@ -1,0 +1,111 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+
+$GIT_REPO = "https://github.com/trancosowiliam/brita-wallet"
+$PROJECT = "brita-wallet"
+
+update_fastlane
+min_fastlane_version("2.112.0")
+default_platform(:android)
+
+platform :android do
+  desc "At any error, do:"
+    error do |lane, exception|
+    notify_server("Algo deu errado...")
+  end
+
+  desc "Run automated tests"
+  lane :test_branch do
+    notify_server("[Android] Rodando os testes de unidade na branch #{git_branch}...")
+    gradle(
+      task: "test",
+      build_type: "ReleaseUnitTest",
+      flags: "--stacktrace --no-daemon"
+    )
+    notify_server("[Android] branch #{git_branch} passou em todos os testes!")
+  end
+
+  desc "Assemble Release Candidate"
+  lane :assemble_release_candidate do
+    notify_server("[Android] Criando a aplicacao canditada para lancamento...")
+    build_android_app(task: "assembleRelease")
+    create_version_file()
+    create_release_app()
+    commit_changes()
+    notify_server_qa_message()
+  end
+
+  desc "Assemble Feature"
+  lane :assemble_feature do
+    notify_server("[Android] Branch atualizada: #{$GIT_REPO}/tree/#{git_branch}")
+    notify_server("[Android] Fazer PR para develop: #{$GIT_REPO}/compare/develop...#{git_branch}?expand=1")
+    notify_server("ReleaseNotes<br>[Android] #{open("ReleaseNotes.txt").read()}")
+  end
+
+  desc "Assemble Hotfix"
+  lane :assemble_hotfix do
+    notify_server("[Android] Fazer PR para master: #{$GIT_REPO}/compare/master...#{git_branch}?expand=1")
+  end
+end
+
+def notify_server(message)
+  post_curl = "curl -X POST"
+  base_url = "https://trancosowiliam.herokuapp.com/api/logci"
+  parameters = "-d '{ \"message\":\"#{message}\", \"project\":\"#{$PROJECT}\"}'"
+  sh("#{post_curl} #{base_url} #{parameters}")
+end
+
+def notify_server_qa_message()
+  version = open("temp/versionName.txt").read()
+  build = open("temp/versionCode.txt").read()
+  app_url_link = "#{$GIT_REPO}/tree/#{git_branch}/beta"
+  message = "Tem uma nova versao do app Android pronta para ser testada.<br>Em caso de qualquer problema podem reportar via github, meus sistemas estao prontos para ativar nossos devs para solucionar qualquer situacao.<br><br>Versao: #{version};<br>Numero do build: #{build};<br>link: #{app_url_link}"
+
+  post_curl = "curl -X POST"
+  base_url = "https://trancosowiliam.herokuapp.com/api/logci"
+  parameters = "-d '{ \"message\":\"#{message}\", \"project\":\"#{$PROJECT}\"}'"
+  sh("#{post_curl} #{base_url} #{parameters}")
+end
+
+def create_version_file()
+  gradle(
+    task: "createVersionFile"
+  )
+end
+
+def create_release_app()
+  gradle(
+    task: "cleanBetaPath"
+  )
+
+  gradle(
+    task: "createReleaseApp"
+  )
+end
+
+def commit_changes()
+  versionCode = open("temp/versionCode.txt").read()
+
+  sh("git config --global user.name \"circle\"")
+  sh("git config --global user.email \"cicleci@circle.com\"")
+
+  git_add(
+    path: "./beta/"
+  )
+
+  git_commit(
+    path: "./beta/",
+    message: "[ci skip] Deploy version #{versionCode}",
+    skip_git_hooks: true
+  )
+
+  push_to_git_remote
+end
