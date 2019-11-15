@@ -1,35 +1,78 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    def tools = rootProject.ext.tools
+
+    compileSdkVersion tools.compileSdkVersion
+    buildToolsVersion tools.buildToolsVersion
+    flavorDimensions "default"
+
     defaultConfig {
-        applicationId "br.com.britawallet"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId tools.applicationId
+        minSdkVersion tools.minSdkVersion
+        targetSdkVersion tools.targetSdkVersion
+        versionCode tools.versionCode
+        versionName tools.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
+        staging {
+            applicationIdSuffix ".staging"
+            debuggable true
+        }
+    }
+
+    androidExtensions {
+        experimental = true
     }
 }
 
 dependencies {
+    def v = rootProject.ext.versions
+
+    // region Kotlin
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.core:core-ktx:$v.core_ktx"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$v.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$v.coroutines"
+    implementation "org.koin:koin-android:$v.koin"
+
+    // region UI
+    implementation "androidx.appcompat:appcompat:$v.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$v.constraint_layout"
+    implementation "androidx.recyclerview:recyclerview:$v.recycler_view"
+    implementation "com.github.bumptech.glide:glide:$v.glide"
+
+    // region Networking
+    implementation "com.squareup.okhttp3:logging-interceptor:$v.okhttp"
+    implementation "com.google.code.gson:gson:$v.gson"
+    implementation "com.squareup.retrofit2:retrofit:$v.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$v.retrofit"
+
+    // region Database
+    implementation "androidx.room:room-runtime:$v.room"
+    kapt "androidx.room:room-compiler:$v.room"
+
+    // region Testing
+    testImplementation "junit:junit:$v.junit"
+    testImplementation "org.koin:koin-test:$v.koin"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$v.mockito_kotlin"
+    androidTestImplementation "androidx.test:runner:$v.test_runner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$v.espresso"
 }
