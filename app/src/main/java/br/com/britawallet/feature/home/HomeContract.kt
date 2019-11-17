@@ -1,9 +1,9 @@
-package br.com.britawallet.feature.main
+package br.com.britawallet.feature.home
 
 import br.com.britawallet.base.BasePresenter
 import br.com.britawallet.base.BaseView
 
-interface MainContract {
+interface HomeContract {
    interface View : BaseView<Presenter> {
    }
 

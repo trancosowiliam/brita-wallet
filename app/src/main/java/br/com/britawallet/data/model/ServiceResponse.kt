@@ -18,10 +18,6 @@ fun <T> ServiceResponse<T>.whenever(
     }
 }
 
-fun <T> ServiceResponse<T?>.withBody(action: (T) -> Unit = {}) {
-    (this as? ServiceResponse.BODY<T>)?.value?.let(action)
-}
-
 fun <T> ServiceResponse<T>.getBodyOrNull(): T? {
     return when (this) {
         is ServiceResponse.BODY<T> -> this.value

@@ -16,4 +16,9 @@
     <string name="login_message_empty_user_login">Preencha o nome do usuário</string>
     <string name="login_message_empty_user_password">Preencha o nome do usuário</string>
     <string name="login_message_invalid_login_or_password">Login ou senha inválida</string>
+
+    <string name="reward_title">Parabéns!</string>
+    <string name="reward_reward"><![CDATA[Você ganhou R$:100.000,00\npara utilizar na plataforma.]]></string>
+    <string name="reward_instruction"><![CDATA[Você pode adquirir novas moedas\ntais como: Brita e Bitcoin, e realizar\n câmbios :D]]></string>
+    <string name="reward_go_to_app">Começar</string>
 </resources>

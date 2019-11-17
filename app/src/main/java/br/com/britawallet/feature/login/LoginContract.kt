@@ -5,6 +5,8 @@ import br.com.britawallet.base.BaseView
 
 interface LoginContract {
     interface View : BaseView<Presenter> {
+        fun setupViews()
+
         fun showLoginLoading()
         fun hideLoginLoading()
 
@@ -13,7 +15,7 @@ interface LoginContract {
         fun showPasswordFieldError(message: String)
 
         fun goToReward()
-        fun goToMain()
+        fun goToHome()
         fun closeWindow()
 
         fun goToRegister()

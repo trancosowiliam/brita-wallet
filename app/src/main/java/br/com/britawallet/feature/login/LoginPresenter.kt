@@ -1,13 +1,13 @@
 package br.com.britawallet.feature.login
 
 import br.com.britawallet.base.extensions.launch
+import br.com.britawallet.base.extensions.whenNull
+import br.com.britawallet.data.global.Dictionary
 import br.com.britawallet.data.local.UserLocalRepository
 import br.com.britawallet.data.model.User
 import br.com.britawallet.data.model.whenever
-import br.com.britawallet.data.model.withBody
 import br.com.britawallet.data.remote.UserRemoteRepository
 import br.com.britawallet.feature.analytics.Analytics
-import br.com.britawallet.data.global.Dictionary
 import kotlinx.coroutines.CoroutineDispatcher
 
 class LoginPresenter(
@@ -21,10 +21,10 @@ class LoginPresenter(
 
     override fun checkAppUser() {
         dispatcher.launch {
-            userLocalRepository.getActiveUser().withBody {
-                view.goToMain()
-                view.closeWindow()
-            }
+            userLocalRepository.getActiveUser().whenever(
+                isBody = ::handlerActiveUser,
+                isError = { handlerActiveUser(null) }
+            )
         }
     }
 
@@ -81,7 +81,16 @@ class LoginPresenter(
     }
 
     private fun onNormalLogin() {
-        view.goToMain()
+        view.goToHome()
         view.closeWindow()
+    }
+
+    private fun handlerActiveUser(user: User?) {
+        user?.let {
+            view.goToHome()
+            view.closeWindow()
+        }.whenNull {
+            view.setupViews()
+        }
     }
 }
