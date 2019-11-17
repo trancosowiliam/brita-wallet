@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Brita Wallet</string>
+
+    <string name="dialog_error_title">Falha</string>
+
+    <string name="todo_title">Alerta</string>
+    <string name="todo_message">Esta funcionalidade será implementada em breve</string>
+
+    <string name="login_user_login">Usuário</string>
+    <string name="login_user_password">Senha</string>
+    <string name="login_action_login">Entrar</string>
+    <string name="login_new_account">Não tem conta?</string>
+    <string name="login_register">Cadastre-se</string>
+    <string name="login_forgot_password">Esqueci minha senha</string>
+
+    <string name="login_message_empty_user_login">Preencha o nome do usuário</string>
+    <string name="login_message_empty_user_password">Preencha o nome do usuário</string>
+    <string name="login_message_invalid_login_or_password">Login ou senha inválida</string>
 </resources>

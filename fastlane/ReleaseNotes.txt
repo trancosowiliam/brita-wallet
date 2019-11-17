@@ -1,1 +1,1 @@
-Adicionado integracao continua via circleCI ao projeto
+Adicionado tela de login utilizando servidor mockado(local)
