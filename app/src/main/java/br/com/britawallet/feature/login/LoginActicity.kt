@@ -9,7 +9,7 @@ import br.com.britawallet.base.extensions.setSafeOnClickListener
 import br.com.britawallet.base.extensions.showMessageDialog
 import br.com.britawallet.base.extensions.showTodoDialog
 import br.com.britawallet.base.extensions.toast
-import br.com.britawallet.feature.main.MainActivity
+import br.com.britawallet.feature.home.HomeActivity
 import br.com.britawallet.feature.reward.RewardActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -19,8 +19,26 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        setupViews()
         presenter.checkAppUser()
+    }
+
+    override fun setupViews() {
+        logGroupViews.isVisible = true
+
+        logBtnLogin.setSafeOnClickListener {
+            presenter.login(
+                logEdtLogin.text.toString(),
+                logEdtPassword.text.toString()
+            )
+        }
+
+        logBtnRegister.setSafeOnClickListener {
+            presenter.register()
+        }
+
+        logBtnForgotPassword.setSafeOnClickListener {
+            presenter.forgotPassword()
+        }
     }
 
     override fun showLoginLoading() {
@@ -50,8 +68,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         startActivity(RewardActivity(this))
     }
 
-    override fun goToMain() {
-        startActivity(MainActivity(this))
+    override fun goToHome() {
+        startActivity(HomeActivity(this))
     }
 
     override fun closeWindow() {
@@ -64,22 +82,5 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun showForgotPasswordDialog() {
         showTodoDialog()
-    }
-
-    private fun setupViews() {
-        logBtnLogin.setSafeOnClickListener {
-            presenter.login(
-                logEdtLogin.text.toString(),
-                logEdtPassword.text.toString()
-            )
-        }
-
-        logBtnRegister.setSafeOnClickListener {
-            presenter.register()
-        }
-
-        logBtnForgotPassword.setSafeOnClickListener {
-            presenter.forgotPassword()
-        }
     }
 }

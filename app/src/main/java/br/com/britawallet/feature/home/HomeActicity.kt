@@ -1,4 +1,4 @@
-package br.com.britawallet.feature.main
+package br.com.britawallet.feature.home
 
 import android.content.Context
 import android.content.Intent
@@ -9,22 +9,22 @@ import br.com.britawallet.base.extensions.injectPresenter
 import br.com.britawallet.base.extensions.setSafeOnClickListener
 import br.com.britawallet.data.local.UserLocalRepository
 import br.com.britawallet.feature.login.LoginActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.android.ext.android.inject
 
-class MainActivity : AppCompatActivity(), MainContract.View {
+class HomeActivity : AppCompatActivity(), HomeContract.View {
     override val presenter by injectPresenter(this)
     private val userLocalRepository by inject<UserLocalRepository>()
 
     companion object {
-        operator fun invoke(context: Context) : Intent {
-            return Intent(context, MainActivity::class.java)
+        operator fun invoke(context: Context): Intent {
+            return Intent(context, HomeActivity::class.java)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
 
         setupViews()
     }

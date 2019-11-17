@@ -11,7 +11,6 @@ import br.com.britawallet.data.remote.initMock
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
-import com.nhaarman.mockitokotlin2.verifyZeroInteractions
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
@@ -36,11 +35,11 @@ class LoginPresenterTest : AutoCloseKoinTest() {
     }
 
     @Test
-    fun `test when has user app then go to main`() = runBlocking {
+    fun `test when has user app then go to home`() = runBlocking {
         presenter.userLocalRepository.mockHasUser()
         presenter.checkAppUser()
 
-        verify(view).goToMain()
+        verify(view).goToHome()
         verify(view).closeWindow()
 
         verifyNoMoreInteractions(view)
@@ -51,7 +50,9 @@ class LoginPresenterTest : AutoCloseKoinTest() {
         presenter.userLocalRepository.mockNoHasUser()
         presenter.checkAppUser()
 
-        verifyZeroInteractions(view)
+        verify(view).setupViews()
+
+        verifyNoMoreInteractions(view)
     }
 
     @Test
@@ -100,14 +101,14 @@ class LoginPresenterTest : AutoCloseKoinTest() {
     }
 
     @Test
-    fun `test when login successful then go main`() = runBlocking {
+    fun `test when login successful then go home`() = runBlocking {
         presenter.userRemoteRepository.initMock()
         presenter.login(LOGIN_SUCCESSFUL, VALID_PASSWORD)
 
         verify(view).showLoginLoading()
         verify(presenter.analytics).eventLoginSuccessful(anyString())
         verify(presenter.userLocalRepository).login(any())
-        verify(view).goToMain()
+        verify(view).goToHome()
         verify(view).closeWindow()
 
         verifyNoMoreInteractions(

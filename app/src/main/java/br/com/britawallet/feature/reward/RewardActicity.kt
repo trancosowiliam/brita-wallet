@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import br.com.britawallet.R
 import br.com.britawallet.base.extensions.injectPresenter
 import br.com.britawallet.base.extensions.setSafeOnClickListener
-import br.com.britawallet.feature.main.MainActivity
+import br.com.britawallet.feature.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_reward.*
 
 class RewardActivity : AppCompatActivity(), RewardContract.View {
@@ -26,10 +26,17 @@ class RewardActivity : AppCompatActivity(), RewardContract.View {
         setupViews()
     }
 
+    override fun goToHome() {
+        startActivity(HomeActivity(this))
+    }
+
+    override fun closeWindow() {
+        finish()
+    }
+
     private fun setupViews() {
-        todoGotoMain.setSafeOnClickListener {
-            startActivity(MainActivity(this))
-            finish()
+        rewBtnGoToApp.setSafeOnClickListener {
+            presenter.begin()
         }
     }
 }

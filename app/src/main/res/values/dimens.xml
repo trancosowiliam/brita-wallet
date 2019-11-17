@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_simple">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+
+    <dimen name="margin_extra_small">2dp</dimen>
+    <dimen name="margin_xxxsmall">4dp</dimen>
+    <dimen name="margin_xxsmall">6dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_xlarge">20dp</dimen>
+    <dimen name="margin_xxlarge">24dp</dimen>
+    <dimen name="margin_xxxlarge">28dp</dimen>
+
+    <dimen name="size_font_app">13sp</dimen>
+
+    <!-- components -->
+    <dimen name="height_component">48dp</dimen>
+    <dimen name="corner_component">6dp</dimen>
+
+    <!-- normal buttom -->
+    <dimen name="size_font_button">16sp</dimen>
+    <dimen name="height_normal_button">@dimen/height_component</dimen>
+    <dimen name="corner_normal_button">6dp</dimen>
+    <dimen name="size_stroke_normal_button">1dp</dimen>
+
+    <!-- panels -->
+    <dimen name="size_font_panel_title">23sp</dimen>
+    <dimen name="size_font_panel">@dimen/size_font_app</dimen>
+    <dimen name="height_components_separator_panel">@dimen/margin_small</dimen>
+    <dimen name="padding_panel">21dp</dimen>
+    <dimen name="corner_panel">8dp</dimen>
+    <dimen name="margin_vertical_info_panel">34dp</dimen>
+</resources>
