@@ -14,6 +14,39 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
+    <style name="Text.Light" parent="Text">
+        <item name="android:textColor">@color/color_text_light</item>
+    </style>
+
+    <style name="Text.Light.SmallLink" parent="Text.Light">
+        <item name="android:textColor">@color/color_text_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Light.LabelEditText" parent="Text.Light">
+        <item name="android:layout_marginStart">@dimen/margin_xxxsmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/size_font_label_edittext</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+    </style>
+
+    <!-- edit -->
+    <style name="EditText" parent="Text">
+        <item name="android:textSize">@dimen/size_font_edittext</item>
+    </style>
+
+    <style name="EditText.Light" parent="EditText">
+        <item name="android:background">@drawable/bg_edt_light</item>
+    </style>
+
+    <style name="EditText.Light.Form" parent="EditText.Light">
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <!-- button -->
     <style name="Button" parent="Text">
         <item name="android:layout_height">@dimen/height_component</item>
         <item name="android:textSize">@dimen/size_font_button</item>
@@ -23,9 +56,13 @@
     </style>
 
     <style name="Button.Light" parent="Button">
-        <item name="android:textStyle"></item>
-        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:textColor">@color/color_text_button_light</item>
         <item name="android:background">@drawable/bg_button_light</item>
+    </style>
+
+    <style name="Button.Normal" parent="Button">
+        <item name="android:textColor">@color/color_text_button_normal</item>
+        <item name="android:background">@drawable/bg_button_normal</item>
     </style>
 
     <!-- panels -->
