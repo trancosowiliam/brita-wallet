@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import br.com.britawallet.R
 import br.com.britawallet.base.extensions.injectPresenter
+import br.com.britawallet.base.extensions.onActionListener
 import br.com.britawallet.base.extensions.setSafeOnClickListener
 import br.com.britawallet.base.extensions.showMessageDialog
 import br.com.britawallet.base.extensions.showTodoDialog
@@ -25,11 +26,12 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun setupViews() {
         logGroupViews.isVisible = true
 
+        logEdtPassword.onActionListener {
+            login()
+        }
+
         logBtnLogin.setSafeOnClickListener {
-            presenter.login(
-                logEdtLogin.text.toString(),
-                logEdtPassword.text.toString()
-            )
+            login()
         }
 
         logBtnRegister.setSafeOnClickListener {
@@ -82,5 +84,12 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun showForgotPasswordDialog() {
         showTodoDialog()
+    }
+
+    fun login() {
+        presenter.login(
+            logEdtLogin.text.toString(),
+            logEdtPassword.text.toString()
+        )
     }
 }

@@ -14,10 +14,14 @@
     <dimen name="margin_xxxlarge">28dp</dimen>
 
     <dimen name="size_font_app">13sp</dimen>
+    <dimen name="size_font_label_edittext">10sp</dimen>
 
     <!-- components -->
     <dimen name="height_component">48dp</dimen>
     <dimen name="corner_component">6dp</dimen>
+
+    <!-- edit -->
+    <dimen name="size_font_edittext">18sp</dimen>
 
     <!-- normal buttom -->
     <dimen name="size_font_button">16sp</dimen>
@@ -32,4 +36,8 @@
     <dimen name="padding_panel">21dp</dimen>
     <dimen name="corner_panel">8dp</dimen>
     <dimen name="margin_vertical_info_panel">34dp</dimen>
+
+    <!-- login -->
+    <dimen name="login_margin_fields_to_buttom">42dp</dimen>
+    <dimen name="login_margin_register_to_forgot_password">14dp</dimen>
 </resources>

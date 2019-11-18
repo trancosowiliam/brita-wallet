@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_primary">#008577</color>
-    <color name="color_primaryDark">#1F2C1F</color>
+    <color name="color_primaryDark">#02130c</color>
     <color name="color_accent">#38B24D</color>
-
-    <color name="color_text">#333333</color>
+    <color name="color_accent_ripple">#3A7E43</color>
 
     <color name="color_translucid_overlay">#88000000</color>
 
-    <!-- buton -->
+    <!-- text -->
+    <color name="color_text">#333333</color>
+    <color name="color_text_light">#DDDDDD</color>
+
+    <!-- button -->
+    <color name="color_button_normal">@color/color_accent</color>
+    <color name="color_text_button_normal">#FFFFFF</color>
+    <color name="color_button_normal_ripple">@color/color_accent_ripple</color>
+
     <color name="color_button_light">#FFFFFF</color>
+    <color name="color_text_button_light">@color/color_accent</color>
     <color name="color_button_light_ripple">#BBBBBB</color>
+
+    <!-- edit light -->
+    <color name="color_edit_light">#FFFFFF</color>
+    <color name="color_stroke_edit_light">#333333</color>
 
     <!--panels -->
     <color name="color_info_panel">#FFFFFF</color>
