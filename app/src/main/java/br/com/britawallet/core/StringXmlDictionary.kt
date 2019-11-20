@@ -1,7 +1,9 @@
-package br.com.britawallet.data.global
+package br.com.britawallet.core
 
 import android.content.Context
 import br.com.britawallet.R
+import br.com.britawallet.data.global.Dictionary
+import br.com.britawallet.data.model.Currency
 
 class StringXmlDictionary(val context: Context) : Dictionary {
     override val LOGIN_EMPTY_USER: String
@@ -15,4 +17,13 @@ class StringXmlDictionary(val context: Context) : Dictionary {
 
     private val Int.str
         get() = context.getString(this)
+
+    override fun getCurrencyName(currency: Currency): String {
+        return context.getString(
+            when (currency) {
+                Currency.BRL -> R.string.todo_title
+                else -> R.string.todo_title
+            }
+        )
+    }
 }

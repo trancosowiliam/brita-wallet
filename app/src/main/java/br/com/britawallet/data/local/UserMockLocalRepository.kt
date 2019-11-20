@@ -4,6 +4,7 @@ import br.com.britawallet.data.entity.BalanceEntity
 import br.com.britawallet.data.entity.UserEntity
 import br.com.britawallet.data.local.dao.BalanceDao
 import br.com.britawallet.data.local.dao.UserDao
+import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.ServiceResponse
 import br.com.britawallet.data.model.User
 import br.com.britawallet.data.model.toServiceBody
@@ -54,13 +55,19 @@ class UserMockLocalRepository(
                 login = userEntity.login,
                 name = userEntity.name,
                 isFirstLogin = false,
-                wallet = walletEntity.map { balanceEntity ->
+                wallet = Currency.all.map { currency ->
                     User.Balance(
-                        currencyType = balanceEntity.type,
-                        quantity = balanceEntity.quantity.toBigDecimal()
+                        currencyType = currency(),
+                        quantity = walletEntity.getBalance(currency).toBigDecimal()
                     )
                 }
             )
         }
+    }
+
+    private fun List<BalanceEntity>.getBalance(currency: Currency): Double {
+        return this.firstOrNull {
+            it.type == currency()
+        }?.quantity ?: 0.0
     }
 }

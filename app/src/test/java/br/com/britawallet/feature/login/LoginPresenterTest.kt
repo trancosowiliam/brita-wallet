@@ -41,6 +41,7 @@ class LoginPresenterTest : AutoCloseKoinTest() {
 
         verify(view).goToHome()
         verify(view).closeWindow()
+        verify(presenter.staticResources).user = any()
 
         verifyNoMoreInteractions(view)
     }
@@ -93,6 +94,7 @@ class LoginPresenterTest : AutoCloseKoinTest() {
         verify(presenter.userLocalRepository).login(any())
         verify(view).goToReward()
         verify(view).closeWindow()
+        verify(presenter.staticResources).user = any()
 
         verifyNoMoreInteractions(
             view,
@@ -110,6 +112,7 @@ class LoginPresenterTest : AutoCloseKoinTest() {
         verify(presenter.userLocalRepository).login(any())
         verify(view).goToHome()
         verify(view).closeWindow()
+        verify(presenter.staticResources).user = any()
 
         verifyNoMoreInteractions(
             view,

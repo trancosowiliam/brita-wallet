@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_background_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ibaCardContainer"
+        style="@style/Box.Balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/ibaBoxCurrencySymbol"
+            style="@style/Box.Small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ibaImgCurrencySymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/ibaBoxCurrencySymbol"
+            app:layout_constraintEnd_toEndOf="@id/ibaBoxCurrencySymbol"
+            app:layout_constraintStart_toStartOf="@id/ibaBoxCurrencySymbol"
+            app:layout_constraintTop_toTopOf="@id/ibaBoxCurrencySymbol"
+            app:srcCompat="@drawable/ic_currency_btc" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibaTxtCurrency"
+            style="@style/Text.DarkBox.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintBottom_toTopOf="@id/ibaLblCurrency"
+            app:layout_constraintStart_toEndOf="@id/ibaBoxCurrencySymbol"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Bitcoin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibaLblCurrency"
+            style="@style/Text.DarkBox.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ibaTxtCurrency"
+            app:layout_constraintTop_toBottomOf="@id/ibaTxtCurrency"
+            tools:text="36.093,51 por real" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/ibaBarrierEndCurrencyDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="ibaTxtCurrency,ibaLblCurrency" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ibaBtnAdd"
+            style="@style/ButtonActionInBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibaTxtValue"
+            style="@style/Text.DarkActionbarValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            tools:text="$ 999,99"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ibaBtnAdd"
+            app:layout_constraintStart_toStartOf="@id/ibaBarrierEndCurrencyDescription"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

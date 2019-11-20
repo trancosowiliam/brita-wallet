@@ -1,11 +1,9 @@
 package br.com.britawallet.data.model
 
-import java.math.BigDecimal
-
 fun mockUser(
     login: String = "login",
     name: String = "name",
-    wallet: List<User.Balance> = mockBalanceList(),
+    wallet: List<User.Balance> = currencyToBalance(),
     isFirstLogin: Boolean = false
 ) = User(
     login = login,
@@ -14,19 +12,9 @@ fun mockUser(
     isFirstLogin = isFirstLogin
 )
 
-fun mockBalanceList(
-    size: Int = 3
-) = List(size) {
-    mockBalance(
-        currencyType = "type $it",
-        quantity = it.toBigDecimal()
+fun currencyToBalance() = Currency.all.mapIndexed { index, currency ->
+    User.Balance(
+        currencyType = currency(),
+        quantity = index.toBigDecimal()
     )
 }
-
-fun mockBalance(
-    currencyType: String,
-    quantity: BigDecimal
-) = User.Balance(
-    currencyType,
-    quantity
-)

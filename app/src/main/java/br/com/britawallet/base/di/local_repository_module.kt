@@ -1,6 +1,7 @@
 package br.com.britawallet.base.di
 
 import androidx.room.Room
+import br.com.britawallet.data.local.StaticResources
 import br.com.britawallet.data.local.UserLocalRepository
 import br.com.britawallet.data.local.UserMockLocalRepository
 import br.com.britawallet.data.local.dao.AppDatabase
@@ -14,6 +15,8 @@ val localRepositoryModule = module {
             balanceDao = get()
         )
     } bind UserLocalRepository::class
+
+    single { StaticResources() }
 }
 
 @Suppress("USELESS_CAST")

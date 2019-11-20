@@ -3,7 +3,7 @@ package br.com.britawallet.base.di
 import br.com.britawallet.feature.analytics.Analytics
 import br.com.britawallet.feature.analytics.MockAnalytics
 import br.com.britawallet.data.global.Dictionary
-import br.com.britawallet.data.global.StringXmlDictionary
+import br.com.britawallet.core.StringXmlDictionary
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.bind

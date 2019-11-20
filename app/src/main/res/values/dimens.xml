@@ -14,11 +14,13 @@
     <dimen name="margin_xxxlarge">28dp</dimen>
 
     <dimen name="size_font_app">13sp</dimen>
+    <dimen name="size_font_small">12sp</dimen>
     <dimen name="size_font_label_edittext">10sp</dimen>
 
     <!-- components -->
     <dimen name="height_component">48dp</dimen>
     <dimen name="corner_component">6dp</dimen>
+    <dimen name="corner_small_box">4dp</dimen>
 
     <!-- edit -->
     <dimen name="size_font_edittext">18sp</dimen>
@@ -36,6 +38,20 @@
     <dimen name="padding_panel">21dp</dimen>
     <dimen name="corner_panel">8dp</dimen>
     <dimen name="margin_vertical_info_panel">34dp</dimen>
+
+    <!-- box -->
+    <dimen name="height_small_box">40dp</dimen>
+
+    <!-- action bar -->
+    <dimen name="width_logo_actionbar">85dp</dimen>
+    <dimen name="margin_top_logo_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="margin_start_logo_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="margin_top_balance_actionbar">@dimen/margin_small</dimen>
+    <dimen name="padding_end_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="padding_bottom_actionbar">23dp</dimen>
+
+    <dimen name="size_font_label_actionbar">11sp</dimen>
+    <dimen name="size_font_value_actionbar">22sp</dimen>
 
     <!-- login -->
     <dimen name="login_margin_fields_to_buttom">42dp</dimen>

@@ -5,4 +5,8 @@ interface Analytics {
     fun eventLoginFailure(login: String, errorType: String)
     fun eventOnRegister()
     fun eventOnForgotPassword()
+
+    fun onProfile()
+    fun onExchange()
+    fun onHistory()
 }

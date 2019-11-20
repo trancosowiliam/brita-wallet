@@ -1,13 +1,13 @@
 package br.com.britawallet.data.remote
 
 import br.com.britawallet.base.extensions.serverDelaySimulate
+import br.com.britawallet.data.global.Dictionary
 import br.com.britawallet.data.local.UserLocalRepository
+import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.ServiceResponse
 import br.com.britawallet.data.model.User
 import br.com.britawallet.data.model.getBodyOrNull
 import br.com.britawallet.data.model.toServiceBody
-import br.com.britawallet.data.global.Dictionary
-import br.com.britawallet.data.model.Currency
 
 class UserMockRemoteRepository(
     private val dictionary: Dictionary,

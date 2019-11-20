@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_primary">#008577</color>
-    <color name="color_primaryDark">#02130c</color>
+    <color name="color_primary_dark">#000000</color>
     <color name="color_accent">#38B24D</color>
     <color name="color_accent_ripple">#3A7E43</color>
 
-    <color name="color_translucid_overlay">#88000000</color>
+    <color name="color_menu_home">#000000</color>
+    <color name="color_translucent_overlay">#88000000</color>
+    <color name="color_background_dark">#081B12</color>
+    <color name="color_background_dark_gradient">#133a2a</color>
+
+    <!-- currency -->
+    <color name="color_currency_brl">#074D16</color>
+    <color name="color_currency_brt">#38B24D</color>
+    <color name="color_currency_btc">#F89800</color>
 
     <!-- text -->
     <color name="color_text">#333333</color>
-    <color name="color_text_light">#DDDDDD</color>
+    <color name="color_text_light">#FFFFFF</color>
 
     <!-- button -->
     <color name="color_button_normal">@color/color_accent</color>
@@ -23,6 +31,9 @@
     <!-- edit light -->
     <color name="color_edit_light">#FFFFFF</color>
     <color name="color_stroke_edit_light">#333333</color>
+
+    <!-- separator -->
+    <color name="color_light_separator">#43534d</color>
 
     <!--panels -->
     <color name="color_info_panel">#FFFFFF</color>
