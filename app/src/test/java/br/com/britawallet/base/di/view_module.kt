@@ -1,5 +1,6 @@
 package br.com.britawallet.base.di
 
+import br.com.britawallet.feature.exchange.ExchangeContract
 import br.com.britawallet.feature.home.HomeContract
 import br.com.britawallet.feature.login.LoginContract
 import br.com.britawallet.feature.reward.RewardContract
@@ -10,4 +11,5 @@ val viewModule = module {
     factory { mock<HomeContract.View>() }
     factory { mock<LoginContract.View>() }
     factory { mock<RewardContract.View>() }
+    factory { mock<ExchangeContract.View>() }
 }

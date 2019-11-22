@@ -13,7 +13,7 @@
     <dimen name="margin_xxlarge">24dp</dimen>
     <dimen name="margin_xxxlarge">28dp</dimen>
 
-    <dimen name="size_font_app">13sp</dimen>
+    <dimen name="size_font_app">14sp</dimen>
     <dimen name="size_font_small">12sp</dimen>
     <dimen name="size_font_label_edittext">10sp</dimen>
 
@@ -56,4 +56,13 @@
     <!-- login -->
     <dimen name="login_margin_fields_to_buttom">42dp</dimen>
     <dimen name="login_margin_register_to_forgot_password">14dp</dimen>
+    
+    <!-- exchange -->
+    <dimen name="exchange_margin_instruction_top">32dp</dimen>
+    <dimen name="exchange_margin_instruction_bottom">32dp</dimen>
+    <dimen name="exchange_margin_edt_horizontal">8dp</dimen>
+    <dimen name="exchange_margin_edt_vertical">14dp</dimen>
+    <dimen name="exchange_margin_transaction_description">52dp</dimen>
+    <dimen name="exchange_width_switch">42dp</dimen>
+
 </resources>

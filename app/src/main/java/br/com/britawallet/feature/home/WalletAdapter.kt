@@ -13,6 +13,11 @@ import kotlinx.android.synthetic.main.item_balance.view.*
 class WalletAdapter : RecyclerView.Adapter<WalletAdapter.WalletHolder>() {
 
     var data = emptyList<BalanceHomeData>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
     var onItemAddClick: ((BalanceHomeData) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

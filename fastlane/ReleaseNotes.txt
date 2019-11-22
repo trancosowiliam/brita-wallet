@@ -1,1 +1,1 @@
-Desenvolvimento da tela principal do aplicativo, com layout. navegacao entre telas e exibicao do saldo e carteira
+Desenvolvimento da tela de cambio

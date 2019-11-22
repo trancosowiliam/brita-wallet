@@ -69,7 +69,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ibaTxtValue"
-            style="@style/Text.DarkActionbarValue"
+            style="@style/Text.DarkBox.H1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="end|center_vertical"

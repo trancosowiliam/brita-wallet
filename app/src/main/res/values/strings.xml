@@ -35,9 +35,18 @@
     <string name="reward_instruction"><![CDATA[Você pode adquirir novas moedas\ntais como: Brita e Bitcoin, e realizar\n câmbios :D]]></string>
     <string name="reward_go_to_app">Começar</string>
 
-    <string name="home_label_balance">Saldo</string>
+    <string name="wt_label_balance">Saldo</string>
 
     <string name="menu_profile">Perfil</string>
     <string name="menu_exchange">Câmbio</string>
     <string name="menu_history">Extrato</string>
+
+    <string name="exchange_instruct">Seleciona as moedas para transferência</string>
+    <string name="exchange_transaction_message">Deseja comprar %s %s por %s %s?</string>
+    <string name="exchange_confirm">Confirmar</string>
+    <string name="exchange_select_currency">Selecione a moeda</string>
+    <string name="exchange_fatal_error">Algo deu errado, não podemos efetuar a transação</string>
+    <string name="exchange_confirme_message">Deseja efetuar a transação?</string>
+    <string name="exchange_insufficient_funds">Saldo insuficiente</string>
+    <string name="exchange_success">Transação efetuada com sucesso</string>
 </resources>

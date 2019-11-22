@@ -8,4 +8,8 @@ interface UserRemoteRepository {
         login: String,
         password: String
     ): ServiceResponse<User>
+
+    suspend fun attUserWallet(
+        user: User
+    )
 }

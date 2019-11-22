@@ -123,6 +123,10 @@
 
     <style name="Text.DarkBox" parent="Text.Light" />
 
+    <style name="Text.DarkBox.H1" parent="Text.ActionbarValue">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
     <style name="Text.DarkBox.H2" parent="Text.DarkBox">
         <item name="android:textSize">12sp</item>
     </style>
@@ -162,7 +166,7 @@
         <item name="srcCompat">@drawable/logo</item>
     </style>
 
-    <style name="Text.DarkActionbarLabel" parent="Text.Light">
+    <style name="Text.ActionbarLabel" parent="Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/margin_top_balance_actionbar</item>
@@ -171,7 +175,7 @@
         <item name="textAllCaps">true</item>
     </style>
 
-    <style name="Text.DarkActionbarValue" parent="Text.Light">
+    <style name="Text.ActionbarValue" parent="Text">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/margin_normal</item>
@@ -184,12 +188,18 @@
         <item name="autoSizeTextType">uniform</item>
     </style>
 
-    <style name="HorizontalSeparator.DarkActionBar">
+    <style name="HorizontalSeparator.ActionBar">
         <item name="android:layout_marginStart">@dimen/margin_normal</item>
         <item name="android:layout_marginTop">@dimen/padding_bottom_actionbar</item>
         <item name="android:layout_marginEnd">@dimen/margin_normal</item>
-        <item name="android:background">@color/color_light_separator</item>
+    </style>
 
+    <style name="DropdownCurrency">
+        <item name="android:layout_marginEnd">@dimen/exchange_margin_edt_horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/margin_small</item>
+        <item name="android:paddingEnd">@dimen/margin_small</item>
     </style>
 
 </resources>

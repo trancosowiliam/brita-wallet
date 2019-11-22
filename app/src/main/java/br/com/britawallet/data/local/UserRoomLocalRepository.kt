@@ -9,7 +9,7 @@ import br.com.britawallet.data.model.ServiceResponse
 import br.com.britawallet.data.model.User
 import br.com.britawallet.data.model.toServiceBody
 
-class UserMockLocalRepository(
+class UserRoomLocalRepository(
     private val userDao: UserDao,
     private val balanceDao: BalanceDao
 ) : UserLocalRepository {
@@ -30,10 +30,14 @@ class UserMockLocalRepository(
             )
         )
 
+        saveWallet(user)
+    }
+
+    override fun saveWallet(user: User) = ServiceResponse.OK.apply {
         balanceDao.save(*user.wallet.map {
             BalanceEntity(
                 it.currencyType,
-                it.quantity.toDouble(),
+                it.quantity,
                 user.login
             )
         }.toTypedArray())
@@ -58,7 +62,7 @@ class UserMockLocalRepository(
                 wallet = Currency.all.map { currency ->
                     User.Balance(
                         currencyType = currency(),
-                        quantity = walletEntity.getBalance(currency).toBigDecimal()
+                        quantity = walletEntity.getBalance(currency)
                     )
                 }
             )

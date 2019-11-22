@@ -7,40 +7,17 @@
     android:background="@color/color_background_dark"
     tools:context=".feature.home.HomeActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/homeImgLogo"
-        style="@style/Image.LogoActionBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/homeLblBalance"
-        style="@style/Text.DarkActionbarLabel"
-        android:text="@string/home_label_balance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/homeTxtBalance"
-        style="@style/Text.DarkActionbarValue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/homeImgLogo"
-        app:layout_constraintTop_toBottomOf="@id/homeLblBalance"
-        tools:text="R$ 100.000,00" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/homeBarrierBottomContentActionBar"
-        android:layout_width="wrap_content"
+    <br.com.britawallet.view.WalletToolbar
+        android:id="@+id/homeToolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="homeLblBalance,homeTxtBalance" />
-
-    <View
-        android:id="@+id/homeViewBottomActionBar"
-        style="@style/HorizontalSeparator.DarkActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeBarrierBottomContentActionBar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:wt_background="@android:color/transparent"
+        app:wt_separatorColor="@color/color_light_separator"
+        app:wt_textLabelColor="@color/color_text_light"
+        app:wt_textValueColor="@color/color_text_light" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecWallet"
@@ -50,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@id/homeMenuBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeViewBottomActionBar"
+        app:layout_constraintTop_toBottomOf="@id/homeToolbar"
         tools:itemCount="3"
         tools:listitem="@layout/item_balance" />
 

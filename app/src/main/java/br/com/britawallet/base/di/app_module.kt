@@ -50,7 +50,12 @@ val appModule = module {
 
     factory { (view: ExchangeContract.View) ->
         ExchangePresenter(
-            view = view
+            view = view,
+            staticResources = get(),
+            quotationRepository = get(),
+            userRemoteRepository = get(),
+            transactionRemoteRepository = get(),
+            dispatcher = get()
         )
     } bind ExchangeContract.Presenter::class
 
@@ -59,5 +64,4 @@ val appModule = module {
             view = view
         )
     } bind HistoryContract.Presenter::class
-
 }

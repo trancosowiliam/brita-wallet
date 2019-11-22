@@ -8,9 +8,6 @@ import br.com.britawallet.data.entity.UserEntity
 
 @Dao
 abstract class UserDao {
-    @Query("SELECT * FROM USER")
-    abstract fun getAll(): List<UserEntity>
-
     @Query("SELECT * FROM USER WHERE LOGIN LIKE :login")
     abstract fun getUser(login: String): UserEntity?
 

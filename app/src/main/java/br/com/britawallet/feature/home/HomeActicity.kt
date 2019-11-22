@@ -1,5 +1,6 @@
 package br.com.britawallet.feature.home
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +10,6 @@ import br.com.britawallet.R
 import br.com.britawallet.base.extensions.injectPresenter
 import br.com.britawallet.base.extensions.setSafeOnClickListener
 import br.com.britawallet.base.extensions.toCurrency
-import br.com.britawallet.core.Library
 import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.User
 import br.com.britawallet.feature.exchange.ExchangeActivity
@@ -17,6 +17,7 @@ import br.com.britawallet.feature.history.HistoryActivity
 import br.com.britawallet.feature.profile.ProfileActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_menu_home.view.*
+import kotlinx.android.synthetic.main.wallet_toolbar.view.*
 
 class HomeActivity : AppCompatActivity(), HomeContract.View {
     override val presenter by injectPresenter(this)
@@ -36,14 +37,21 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         presenter.loadWallet()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when {
+            resultCode == Activity.RESULT_OK && ExchangeActivity.isOrigin(requestCode) -> presenter.loadWallet()
+            else -> super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
     override fun showBalance(balance: User.Balance) {
-        val balanceHomeData = balance.toBalanceHomeData()
-        homeTxtBalance.text = balanceHomeData.quantity.toCurrency(balanceHomeData.symbol)
+        val balanceHomeData = balance.toBalanceHomeData(this)
+        homeToolbar.wtTxtBalance.text = balanceHomeData.quantity.toCurrency(balanceHomeData.symbol)
     }
 
     override fun showWallet(wallet: List<User.Balance>) {
         walletAdapter.data = wallet.map {
-            it.toBalanceHomeData()
+            it.toBalanceHomeData(this)
         }
     }
 
@@ -52,7 +60,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun goToExchange() {
-        startActivity(ExchangeActivity(this))
+        ExchangeActivity.startActivityForResult(this)
     }
 
     override fun goToHistory() {
@@ -60,7 +68,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun goToAdd(currency: Currency) {
-        startActivity(ExchangeActivity(this))
+        ExchangeActivity.startActivityForResult(this)
     }
 
     private fun setupViews() {
@@ -83,22 +91,4 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     operator fun User.Balance.invoke(): String {
         return this.currencyType
     }
-
-    private fun User.Balance.toBalanceHomeData(): BalanceHomeData {
-        val currency = Currency(this.currencyType)
-        val currencyResource = Library.getResource(currency)
-
-        return BalanceHomeData(
-            this.currencyType,
-            this.quantity,
-            currencyResource.name.str,
-            currencyResource.icon,
-            currencyResource.color,
-            currencyResource.name.str,
-            currencyResource.pluralName.str,
-            currencyResource.symbol.str
-        )
-    }
-
-    private val Int.str get() = getString(this)
 }

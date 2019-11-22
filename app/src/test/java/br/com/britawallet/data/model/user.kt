@@ -15,6 +15,6 @@ fun mockUser(
 fun currencyToBalance() = Currency.all.mapIndexed { index, currency ->
     User.Balance(
         currencyType = currency(),
-        quantity = index.toBigDecimal()
+        quantity = index.toDouble()
     )
 }

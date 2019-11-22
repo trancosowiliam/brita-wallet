@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mlvImgTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7.5dp"
+        android:tint="@color/color_accent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mlvLblAddress"
+        app:srcCompat="@drawable/bg_balance" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mlvLblAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/todo_message"
+        android:textColor="@color/color_accent"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/mlvTxtAddress"
+        app:layout_constraintStart_toEndOf="@+id/mlvImgTarget"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mlvTxtAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mlvImgEdit"
+        app:layout_constraintStart_toStartOf="@+id/mlvLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/mlvLblAddress"
+        tools:text="80510342 - Mercês - Curitiba/PR" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mlvImgArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:tint="@color/color_accent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mlvTxtAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mlvTxtAddress"
+        app:srcCompat="@drawable/bg_balance" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mlvImgEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:tint="@color/color_accent"
+        app:layout_constraintBottom_toBottomOf="@+id/mlvImgTarget"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mlvImgTarget"
+        app:srcCompat="@drawable/bg_balance" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

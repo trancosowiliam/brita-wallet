@@ -13,11 +13,11 @@ class HomePresenter(
     override fun loadWallet() {
         staticResources.user?.let { user ->
             val balance = user.wallet.first { balance ->
-                Currency(balance.currencyType).isDefault
+                Currency[balance.currencyType].isDefault
             }
 
             val wallet = user.wallet.filter { balance ->
-                !Currency(balance.currencyType).isDefault
+                !Currency[balance.currencyType].isDefault
             }
 
             view.showBalance(balance)

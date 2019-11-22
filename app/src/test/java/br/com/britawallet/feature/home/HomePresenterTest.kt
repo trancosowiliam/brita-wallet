@@ -46,7 +46,7 @@ class HomePresenterTest : AutoCloseKoinTest() {
         presenter.loadWallet()
 
         verify(view).showBalance(argThat {
-            Currency(this.currencyType).isDefault
+            Currency[this.currencyType].isDefault
         })
     }
 

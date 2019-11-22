@@ -8,9 +8,6 @@ import br.com.britawallet.data.entity.BalanceEntity
 
 @Dao
 abstract class BalanceDao {
-    @Query("SELECT * FROM BALANCE")
-    abstract fun getAll(): List<BalanceEntity>
-
     @Query("SELECT * FROM BALANCE WHERE USER_ID = :login")
     abstract fun getBalanceForUser(login: String): List<BalanceEntity>
 
