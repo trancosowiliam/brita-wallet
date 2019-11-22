@@ -6,6 +6,10 @@ interface Analytics {
     fun eventOnRegister()
     fun eventOnForgotPassword()
 
+    fun onLogout(login: String)
+    fun onEditUser(login: String)
+    fun onDeleteAccount(login: String)
+
     fun onProfile()
     fun onExchange()
     fun onHistory()

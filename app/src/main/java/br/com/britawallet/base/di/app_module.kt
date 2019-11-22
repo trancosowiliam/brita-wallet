@@ -1,19 +1,19 @@
 package br.com.britawallet.base.di
 
-import br.com.britawallet.feature.home.HomeContract
-import br.com.britawallet.feature.home.HomePresenter
-import br.com.britawallet.feature.login.LoginContract
-import br.com.britawallet.feature.login.LoginPresenter
-import br.com.britawallet.feature.reward.RewardContract
-import br.com.britawallet.feature.reward.RewardPresenter
-import org.koin.dsl.bind
-import org.koin.dsl.module
-import br.com.britawallet.feature.profile.ProfileContract
-import br.com.britawallet.feature.profile.ProfilePresenter
 import br.com.britawallet.feature.exchange.ExchangeContract
 import br.com.britawallet.feature.exchange.ExchangePresenter
 import br.com.britawallet.feature.history.HistoryContract
 import br.com.britawallet.feature.history.HistoryPresenter
+import br.com.britawallet.feature.home.HomeContract
+import br.com.britawallet.feature.home.HomePresenter
+import br.com.britawallet.feature.login.LoginContract
+import br.com.britawallet.feature.login.LoginPresenter
+import br.com.britawallet.feature.profile.ProfileContract
+import br.com.britawallet.feature.profile.ProfilePresenter
+import br.com.britawallet.feature.reward.RewardContract
+import br.com.britawallet.feature.reward.RewardPresenter
+import org.koin.dsl.bind
+import org.koin.dsl.module
 
 val appModule = module {
     factory { (view: HomeContract.View) ->
@@ -44,7 +44,10 @@ val appModule = module {
 
     factory { (view: ProfileContract.View) ->
         ProfilePresenter(
-            view = view
+            view = view,
+            staticResources = get(),
+            userLocalRepository = get(),
+            analytics = get()
         )
     } bind ProfileContract.Presenter::class
 

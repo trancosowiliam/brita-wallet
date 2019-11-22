@@ -65,4 +65,9 @@
     <dimen name="exchange_margin_transaction_description">52dp</dimen>
     <dimen name="exchange_width_switch">42dp</dimen>
 
+    <!-- profile -->
+    <dimen name="profile_size_font_user_name">16sp</dimen>
+    <dimen name="profile_size_font_user_description">10sp</dimen>
+    <dimen name="profile_size_font_footer">11sp</dimen>
+
 </resources>

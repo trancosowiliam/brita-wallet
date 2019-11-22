@@ -1,5 +1,7 @@
 package br.com.britawallet.feature.login
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -16,6 +18,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
     override val presenter by injectPresenter(this)
+
+    companion object {
+        operator fun invoke(context: Context): Intent {
+            return Intent(context, LoginActivity::class.java)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
