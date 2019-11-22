@@ -1,11 +1,210 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textSize">@dimen/size_font_app</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="Text.Light" parent="Text">
+        <item name="android:textColor">@color/color_text_light</item>
+    </style>
+
+    <style name="Text.Light.SmallLink" parent="Text.Light">
+        <item name="android:textColor">@color/color_text_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Light.LabelEditText" parent="Text.Light">
+        <item name="android:layout_marginStart">@dimen/margin_xxxsmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/size_font_label_edittext</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+    </style>
+
+    <!-- edit -->
+    <style name="EditText" parent="Text">
+        <item name="android:textSize">@dimen/size_font_edittext</item>
+    </style>
+
+    <style name="EditText.Light" parent="EditText">
+        <item name="android:background">@drawable/bg_edt_light</item>
+    </style>
+
+    <style name="EditText.Light.Form" parent="EditText.Light">
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <!-- button -->
+    <style name="Button" parent="Text">
+        <item name="android:layout_height">@dimen/height_component</item>
+        <item name="android:textSize">@dimen/size_font_button</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:layout_marginBottom">@dimen/margin_xlarge</item>
+    </style>
+
+    <style name="Button.Light" parent="Button">
+        <item name="android:textColor">@color/color_text_button_light</item>
+        <item name="android:background">@drawable/bg_button_light</item>
+    </style>
+
+    <style name="Button.Normal" parent="Button">
+        <item name="android:textColor">@color/color_text_button_normal</item>
+        <item name="android:background">@drawable/bg_button_normal</item>
+    </style>
+
+    <style name="Image" />
+
+    <style name="HorizontalSeparator">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="RecyclerView">
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <!-- panels -->
+    <style name="Panel">
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <!-- info panel -->
+    <style name="Panel.InfoPanel" parent="Panel">
+        <item name="android:background">@drawable/bg_info_panel</item>
+        <item name="android:layout_marginTop">@dimen/margin_vertical_info_panel</item>
+    </style>
+
+    <style name="Text.InfoPanel" parent="Text">
+        <item name="android:textSize">@dimen/size_font_panel</item>
+        <item name="android:textColor">@color/color_text_info_panel</item>
+        <item name="android:layout_marginTop">@dimen/height_components_separator_panel</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="Text.InfoPanel.Title" parent="Text.InfoPanel">
+        <item name="android:textSize">@dimen/size_font_panel_title</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/padding_panel</item>
+    </style>
+
+    <!-- box -->
+    <style name="Box" />
+
+    <style name="Box.Balance">
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginTop">@dimen/margin_xsmall</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:layout_marginBottom">@dimen/margin_xxsmall</item>
+        <item name="android:background">@drawable/bg_balance</item>
+        <item name="android:padding">@dimen/margin_small</item>
+    </style>
+
+    <style name="Box.Small">
+        <item name="android:layout_width">@dimen/height_small_box</item>
+        <item name="android:layout_height">@dimen/height_small_box</item>
+        <item name="android:background">@drawable/bg_translucent_box</item>
+    </style>
+
+    <style name="Text.DarkBox" parent="Text.Light" />
+
+    <style name="Text.DarkBox.H1" parent="Text.ActionbarValue">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="Text.DarkBox.H2" parent="Text.DarkBox">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.DarkBox.H3" parent="Text.DarkBox">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">#CCFFFFFF</item>
+    </style>
+
+    <style name="ButtonActionInBox">
+        <item name="srcCompat">@drawable/bg_translucent_box</item>
+    </style>
+
+    <style name="Box.DarkMenu">
+        <item name="android:paddingTop">@dimen/margin_small</item>
+        <item name="android:paddingEnd">@dimen/margin_xxxlarge</item>
+        <item name="android:paddingBottom">@dimen/margin_xsmall</item>
+        <item name="android:paddingStart">@dimen/margin_xxxlarge</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Box.TextDarkMenu" parent="Text.Light">
+        <item name="android:textSize">11sp</item>
+        <item name="android:layout_marginTop">3dp</item>
+    </style>
+
+    <!-- action bar -->
+    <style name="ActionBar" />
+
+    <style name="Image.LogoActionBar">
+        <item name="android:layout_width">@dimen/width_logo_actionbar</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginTop">@dimen/margin_normal</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="srcCompat">@drawable/logo</item>
+    </style>
+
+    <style name="Text.ActionbarLabel" parent="Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_top_balance_actionbar</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:textSize">@dimen/size_font_label_actionbar</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="Text.ActionbarValue" parent="Text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textSize">@dimen/size_font_value_actionbar</item>
+        <item name="autoSizeMinTextSize">@dimen/size_font_small</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="HorizontalSeparator.ActionBar">
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginTop">@dimen/padding_bottom_actionbar</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <style name="DropdownCurrency">
+        <item name="android:layout_marginEnd">@dimen/exchange_margin_edt_horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/margin_small</item>
+        <item name="android:paddingEnd">@dimen/margin_small</item>
     </style>
 
 </resources>

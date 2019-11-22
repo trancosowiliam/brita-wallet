@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WalletToolbar">
+        <attr name="wt_textValueColor" format="color" />
+        <attr name="wt_textLabelColor" format="color" />
+        <attr name="wt_separatorColor" format="color" />
+        <attr name="wt_background" format="color" />
+    </declare-styleable>
+</resources>

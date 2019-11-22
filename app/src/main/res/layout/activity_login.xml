@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".feature.login.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logImgLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        app:layout_constraintDimensionRatio="9:5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logLblLogin"
+        style="@style/Text.Light.LabelEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_user_login"
+        app:layout_constraintBottom_toTopOf="@id/logEdtLogin"
+        app:layout_constraintStart_toStartOf="@id/logEdtLogin"
+        app:layout_constraintTop_toBottomOf="@id/logImgLogo" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/logEdtLogin"
+        style="@style/EditText.Light.Form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logLblLogin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logLblPassword"
+        style="@style/Text.Light.LabelEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_user_password"
+        app:layout_constraintStart_toStartOf="@id/logEdtLogin"
+        app:layout_constraintTop_toBottomOf="@id/logEdtLogin" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/logEdtPassword"
+        style="@style/EditText.Light.Form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionSend"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logLblPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logBtnLogin"
+        style="@style/Button.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_margin_fields_to_buttom"
+        android:text="@string/login_action_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logEdtPassword" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logBtnRegister"
+        style="@style/Text.Light.SmallLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xsmall"
+        android:text="@string/login_register"
+        app:layout_constraintBottom_toTopOf="@id/logBtnForgotPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logBtnLogin"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/logBtnForgotPassword"
+        style="@style/Text.Light.SmallLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_margin_register_to_forgot_password"
+        android:layout_marginBottom="@dimen/margin_xxxlarge"
+        android:text="@string/login_forgot_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logBtnRegister" />
+
+    <include
+        android:id="@+id/logFrLoading"
+        layout="@layout/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/logGroupViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="logImgLogo,logLblLogin,logEdtLogin,logLblPassword,logEdtPassword,logBtnLogin,logBtnRegister,logBtnForgotPassword"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

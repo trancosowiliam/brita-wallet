@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.exchange.ExchangeActivity">
+
+    <br.com.britawallet.view.WalletToolbar
+        android:id="@+id/excToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:wt_background="@color/color_background_light_actionbar"
+        app:wt_separatorColor="@android:color/transparent"
+        app:wt_textLabelColor="@color/color_text_label_light_actionbar"
+        app:wt_textValueColor="@color/color_text_value_actionbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/excLblInstruction"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_xxxlarge"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:text="@string/exchange_instruct"
+        android:textColor="@color/color_text_opaque"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/excToolbar" />
+
+    <br.com.britawallet.view.MoneyEditText
+        android:id="@+id/excEdtFrom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_xxxlarge"
+        android:layout_marginEnd="@dimen/exchange_margin_edt_horizontal"
+        android:background="@drawable/bg_edt_from"
+        android:gravity="end|center_vertical"
+        app:layout_constraintEnd_toStartOf="@id/excBtnFrom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/excLblInstruction" />
+
+    <LinearLayout
+        android:id="@+id/excBtnFrom"
+        style="@style/DropdownCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_img_from"
+        app:layout_constraintBottom_toBottomOf="@id/excEdtFrom"
+        app:layout_constraintEnd_toStartOf="@id/excBtnExchange"
+        app:layout_constraintStart_toEndOf="@id/excEdtFrom"
+        app:layout_constraintTop_toTopOf="@id/excEdtFrom">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/excImgFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xxsmall"
+            app:srcCompat="@drawable/btn_currency_brl" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_drop_down_arrow" />
+
+    </LinearLayout>
+
+    <br.com.britawallet.view.MoneyEditText
+        android:id="@+id/excEdtTo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/exchange_margin_edt_vertical"
+        android:layout_marginEnd="@dimen/exchange_margin_edt_horizontal"
+        android:background="@drawable/bg_edt_to"
+        android:gravity="end|center_vertical"
+        app:layout_constraintEnd_toStartOf="@id/excBtnTo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/excEdtFrom" />
+
+    <LinearLayout
+        android:id="@+id/excBtnTo"
+        style="@style/DropdownCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_img_to"
+        app:layout_constraintBottom_toBottomOf="@id/excEdtTo"
+        app:layout_constraintEnd_toStartOf="@id/excBtnExchange"
+        app:layout_constraintStart_toEndOf="@id/excEdtTo"
+        app:layout_constraintTop_toTopOf="@id/excEdtTo">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/excImgTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xxsmall"
+            app:srcCompat="@drawable/btn_currency_btc" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_drop_down_arrow" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/excBtnExchange"
+        android:layout_width="@dimen/exchange_width_switch"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:background="@drawable/ic_exchange_switch"
+        app:layout_constraintBottom_toBottomOf="@id/excEdtTo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/excBtnTo"
+        app:layout_constraintTop_toTopOf="@id/excEdtFrom" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="7:4"
+        android:background="@color/color_accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/excTxtMessage"
+            style="@style/Text.Light"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/exchange_margin_transaction_description"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/exchange_margin_transaction_description"
+            android:gravity="center"
+            android:text="@string/todo_message"
+            app:layout_constraintBottom_toTopOf="@id/excBtnConfirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/excBtnConfirm"
+            style="@style/Button.Light"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/exchange_confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/excFrLoading"
+        layout="@layout/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#B8E6C5" />
+            <size
+                android:width="140dp"
+                android:height="140dp" />
+        </shape>
+    </item>
+
+    <item
+        android:width="85dp"
+        android:height="85dp"
+        android:bottom="10dp"
+        android:drawable="@drawable/ic_money_bag"
+        android:gravity="center" />
+</layer-list>

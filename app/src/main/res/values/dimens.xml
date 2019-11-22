@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_simple">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+
+    <dimen name="margin_extra_small">2dp</dimen>
+    <dimen name="margin_xxxsmall">4dp</dimen>
+    <dimen name="margin_xxsmall">6dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_xlarge">20dp</dimen>
+    <dimen name="margin_xxlarge">24dp</dimen>
+    <dimen name="margin_xxxlarge">28dp</dimen>
+
+    <dimen name="size_font_app">14sp</dimen>
+    <dimen name="size_font_small">12sp</dimen>
+    <dimen name="size_font_label_edittext">10sp</dimen>
+
+    <!-- components -->
+    <dimen name="height_component">48dp</dimen>
+    <dimen name="corner_component">6dp</dimen>
+    <dimen name="corner_small_box">4dp</dimen>
+
+    <!-- edit -->
+    <dimen name="size_font_edittext">18sp</dimen>
+
+    <!-- normal buttom -->
+    <dimen name="size_font_button">16sp</dimen>
+    <dimen name="height_normal_button">@dimen/height_component</dimen>
+    <dimen name="corner_normal_button">6dp</dimen>
+    <dimen name="size_stroke_normal_button">1dp</dimen>
+
+    <!-- panels -->
+    <dimen name="size_font_panel_title">23sp</dimen>
+    <dimen name="size_font_panel">@dimen/size_font_app</dimen>
+    <dimen name="height_components_separator_panel">@dimen/margin_small</dimen>
+    <dimen name="padding_panel">21dp</dimen>
+    <dimen name="corner_panel">8dp</dimen>
+    <dimen name="margin_vertical_info_panel">34dp</dimen>
+
+    <!-- box -->
+    <dimen name="height_small_box">40dp</dimen>
+
+    <!-- action bar -->
+    <dimen name="width_logo_actionbar">85dp</dimen>
+    <dimen name="margin_top_logo_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="margin_start_logo_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="margin_top_balance_actionbar">@dimen/margin_small</dimen>
+    <dimen name="padding_end_actionbar">@dimen/margin_normal</dimen>
+    <dimen name="padding_bottom_actionbar">23dp</dimen>
+
+    <dimen name="size_font_label_actionbar">11sp</dimen>
+    <dimen name="size_font_value_actionbar">22sp</dimen>
+
+    <!-- login -->
+    <dimen name="login_margin_fields_to_buttom">42dp</dimen>
+    <dimen name="login_margin_register_to_forgot_password">14dp</dimen>
+    
+    <!-- exchange -->
+    <dimen name="exchange_margin_instruction_top">32dp</dimen>
+    <dimen name="exchange_margin_instruction_bottom">32dp</dimen>
+    <dimen name="exchange_margin_edt_horizontal">8dp</dimen>
+    <dimen name="exchange_margin_edt_vertical">14dp</dimen>
+    <dimen name="exchange_margin_transaction_description">52dp</dimen>
+    <dimen name="exchange_width_switch">42dp</dimen>
+
+    <!-- profile -->
+    <dimen name="profile_size_font_user_name">18sp</dimen>
+    <dimen name="profile_size_font_user_description">10sp</dimen>
+    <dimen name="profile_size_font_footer">11sp</dimen>
+
+    <!-- transaction -->
+    <dimen name="transaction_margin_actions">8dp</dimen>
+    <dimen name="transaction_margin_symbols">3dp</dimen>
+    <dimen name="transaction_size_icon">28dp</dimen>
+
+</resources>

@@ -19,6 +19,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
+
+        buildConfigField "String", "BANCO_CENTRAL_URL", "\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/\""
+        buildConfigField "String", "MERCADO_BITCOIN_URL", "\"https://www.mercadobitcoin.net/api/BTC/\""
     }
     buildTypes {
         release {
@@ -57,7 +60,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$v.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$v.constraint_layout"
     implementation "androidx.recyclerview:recyclerview:$v.recycler_view"
-    implementation "com.github.bumptech.glide:glide:$v.glide"
 
     // region Networking
     implementation "com.squareup.okhttp3:logging-interceptor:$v.okhttp"

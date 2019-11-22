@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itraImgSell"
+        android:layout_width="@dimen/transaction_size_icon"
+        android:layout_height="@dimen/transaction_size_icon"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:src="@drawable/btn_currency_btc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itraImgBuy"
+        android:layout_width="@dimen/transaction_size_icon"
+        android:layout_height="@dimen/transaction_size_icon"
+        android:layout_marginStart="@dimen/transaction_margin_actions"
+        android:layout_marginTop="@dimen/transaction_margin_actions"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:src="@drawable/btn_currency_brt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/itraImgSell"
+        app:layout_constraintTop_toTopOf="@id/itraImgSell" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itraTxtDescription"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_marginEnd="@dimen/margin_xxxsmall"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/itraImgSellValue"
+        app:layout_constraintEnd_toStartOf="@id/itraImgSellValue"
+        app:layout_constraintStart_toEndOf="@id/itraImgBuy"
+        app:layout_constraintTop_toTopOf="@id/itraImgSellValue"
+        tools:text="Trocou Bitcoin por Brita" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itraTxtDate"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_marginEnd="@dimen/margin_xxxsmall"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/itraImgBuyValue"
+        app:layout_constraintEnd_toStartOf="@id/itraImgBuyValue"
+        app:layout_constraintStart_toEndOf="@id/itraImgBuy"
+        app:layout_constraintTop_toTopOf="@id/itraImgBuyValue"
+        tools:text="21/11/2019" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itraImgSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_xxxsmall"
+        android:layout_marginBottom="@dimen/transaction_margin_symbols"
+        app:layout_constraintBottom_toTopOf="@id/itraImgBuyValue"
+        app:layout_constraintEnd_toStartOf="@id/itraTxtSellValue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_minus" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itraImgBuyValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/transaction_margin_symbols"
+        android:layout_marginEnd="@dimen/margin_xxxsmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/itraTxtBuyValue"
+        app:layout_constraintTop_toBottomOf="@id/itraImgSellValue"
+        app:srcCompat="@drawable/ic_add" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itraTxtSellValue"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:textColor="@color/color_minus"
+        android:textSize="@dimen/size_font_small"
+        app:layout_constraintBottom_toBottomOf="@id/itraImgSellValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/itraImgSellValue"
+        tools:text="$ 25,00 Bitcoin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itraTxtBuyValue"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:textColor="@color/color_add"
+        android:textSize="@dimen/size_font_small"
+        app:layout_constraintBottom_toBottomOf="@id/itraImgBuyValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/itraImgBuyValue"
+        tools:text="$ 1,00 Brita" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

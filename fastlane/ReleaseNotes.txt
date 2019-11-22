@@ -1,1 +1,1 @@
-Adicionado integracao continua via circleCI ao projeto
+Documentação da versão 1.00.00

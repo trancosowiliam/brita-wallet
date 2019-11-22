@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_accent"
+    tools:context=".feature.reward.RewardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Panel.InfoPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rewTxtTitle"
+            style="@style/Text.InfoPanel.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reward_title"
+            app:layout_constraintBottom_toTopOf="@id/rewTxtReward"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rewTxtReward"
+            style="@style/Text.InfoPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reward_reward"
+            app:layout_constraintBottom_toTopOf="@id/rewImgMoneyBag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rewTxtTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rewImgMoneyBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_panel"
+            android:src="@drawable/ic_reward_money_bag"
+            app:layout_constraintBottom_toTopOf="@id/rewTxtInstruction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rewTxtReward" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rewTxtInstruction"
+            style="@style/Text.InfoPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_panel"
+            android:text="@string/reward_instruction"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rewImgMoneyBag" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rewBtnGoToApp"
+        style="@style/Button.Light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/reward_go_to_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
