@@ -1,1 +1,1 @@
-Desenvolvimento da tela de extrato
+Documentação da versão 1.00.00
