@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.britawallet">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".base.application.App"
         android:allowBackup="true"
@@ -26,6 +28,18 @@
 
         <activity
             android:name=".feature.home.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".feature.profile.ProfileActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".feature.exchange.ExchangeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".feature.history.HistoryActivity"
             android:screenOrientation="portrait" />
 
     </application>

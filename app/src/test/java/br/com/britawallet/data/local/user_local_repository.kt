@@ -6,12 +6,12 @@ import br.com.britawallet.data.model.toServiceBody
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 
-suspend fun UserLocalRepository.mockHasUser() {
+fun UserLocalRepository.mockHasUser() {
     val user = mock<User>()
 
     whenever(this.getActiveUser()).thenReturn(user.toServiceBody())
 }
 
-suspend fun UserLocalRepository.mockNoHasUser() {
+fun UserLocalRepository.mockNoHasUser() {
     whenever(this.getActiveUser()).thenReturn(ServiceResponse.BODY(null))
 }

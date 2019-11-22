@@ -12,11 +12,4 @@ data class UserEntity(
     @ColumnInfo(name = DB.USER.COLUMNS.LOGIN) val login: String,
     @ColumnInfo(name = DB.USER.COLUMNS.NAME) val name: String,
     @ColumnInfo(name = DB.USER.COLUMNS.ACTIVE) val active: Boolean = false
-) {
-    @Ignore
-    val balances: MutableList<BalanceEntity> = mutableListOf()
-
-    fun addBalance(type: String, quantity: Double) {
-        balances.add(BalanceEntity(type, quantity, login))
-    }
-}
+)

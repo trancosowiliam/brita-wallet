@@ -10,9 +10,9 @@
     </item>
 
     <item
-        android:gravity="center"
         android:width="85dp"
         android:height="85dp"
         android:bottom="10dp"
-        android:drawable="@drawable/ic_money_bag"></item>
+        android:drawable="@drawable/ic_money_bag"
+        android:gravity="center" />
 </layer-list>

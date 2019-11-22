@@ -6,6 +6,19 @@
     <string name="todo_title">Alerta</string>
     <string name="todo_message">Esta funcionalidade será implementada em breve</string>
 
+    <!-- currency -->
+    <string name="currency_brl_name">Real</string>
+    <string name="currency_brl_plural_name">Reais</string>
+    <string name="currency_brl_symbol">R$</string>
+
+    <string name="currency_brt_name">Brita</string>
+    <string name="currency_brt_plural_name">Britas</string>
+    <string name="currency_brt_symbol">B$</string>
+
+    <string name="currency_btc_name">Bitcoin</string>
+    <string name="currency_btc_plural_name">Bitcoins</string>
+    <string name="currency_btc_symbol">₿</string>
+
     <string name="login_user_login">Usuário</string>
     <string name="login_user_password">Senha</string>
     <string name="login_action_login">Entrar</string>
@@ -21,4 +34,19 @@
     <string name="reward_reward"><![CDATA[Você ganhou R$:100.000,00\npara utilizar na plataforma.]]></string>
     <string name="reward_instruction"><![CDATA[Você pode adquirir novas moedas\ntais como: Brita e Bitcoin, e realizar\n câmbios :D]]></string>
     <string name="reward_go_to_app">Começar</string>
+
+    <string name="wt_label_balance">Saldo</string>
+
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_exchange">Câmbio</string>
+    <string name="menu_history">Extrato</string>
+
+    <string name="exchange_instruct">Seleciona as moedas para transferência</string>
+    <string name="exchange_transaction_message">Deseja comprar %s %s por %s %s?</string>
+    <string name="exchange_confirm">Confirmar</string>
+    <string name="exchange_select_currency">Selecione a moeda</string>
+    <string name="exchange_fatal_error">Algo deu errado, não podemos efetuar a transação</string>
+    <string name="exchange_confirme_message">Deseja efetuar a transação?</string>
+    <string name="exchange_insufficient_funds">Saldo insuficiente</string>
+    <string name="exchange_success">Transação efetuada com sucesso</string>
 </resources>

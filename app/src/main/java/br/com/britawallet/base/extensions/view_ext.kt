@@ -1,9 +1,15 @@
 package br.com.britawallet.base.extensions
 
+import android.content.Context
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.ShapeDrawable
 import android.os.SystemClock
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.ContextCompat
 
 private class SafeClickListener(
     private var defaultInterval: Int = 2300,
@@ -40,6 +46,22 @@ fun AppCompatEditText.onActionListener(function: () -> Unit) {
                 return@setOnEditorActionListener true
             }
             else -> return@setOnEditorActionListener false
+        }
+    }
+}
+
+fun Drawable?.setColor(context: Context, resColor: Int) {
+    val color = ContextCompat.getColor(context, resColor)
+
+    when (this) {
+        is ShapeDrawable -> {
+            paint.color = color
+        }
+        is GradientDrawable -> {
+            setColor(color)
+        }
+        is ColorDrawable -> {
+            setColor(color)
         }
     }
 }

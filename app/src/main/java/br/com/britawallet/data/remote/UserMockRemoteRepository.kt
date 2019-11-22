@@ -1,13 +1,13 @@
 package br.com.britawallet.data.remote
 
 import br.com.britawallet.base.extensions.serverDelaySimulate
+import br.com.britawallet.data.global.Dictionary
 import br.com.britawallet.data.local.UserLocalRepository
+import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.ServiceResponse
 import br.com.britawallet.data.model.User
 import br.com.britawallet.data.model.getBodyOrNull
 import br.com.britawallet.data.model.toServiceBody
-import br.com.britawallet.data.global.Dictionary
-import br.com.britawallet.data.model.Currency
 
 class UserMockRemoteRepository(
     private val dictionary: Dictionary,
@@ -37,18 +37,25 @@ class UserMockRemoteRepository(
             // if it exists in the database, the user has already been used in this application.
             // else, create a new user
             val user = if (userDatabase == null) {
-                val reward = User.Balance(Currency.BRL(), 100_000.0.toBigDecimal())
+                val wallet = listOf(
+                    User.Balance(Currency.BRL(), 100_000.00),
+                    User.Balance(Currency.BRT(), 0.00),
+                    User.Balance(Currency.BTC(), 0.00)
+                )
 
-                User(login, login, listOf(reward), true).apply {
+                User(login, login, wallet, true).apply {
                     userLocalRepository.saveUser(this)
                 }
             } else userDatabase
-
 
             return user.toServiceBody()
         } else {
             ServiceResponse.ERROR(dictionary.SERVICE_ERROR_INVALID_LOGIN_OR_PASSWORD)
         }
+    }
+
+    override suspend fun attUserWallet(user: User) {
+        userLocalRepository.saveWallet(user)
     }
 
     private fun isValidLogin(
