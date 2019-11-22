@@ -54,4 +54,7 @@
     <string name="profile_logout">Sair</string>
     <string name="profile_todo_description">Membro desde 2019</string>
     <string name="profile_app_description">\@ 2019 Stone Wallet | Versão %s</string>
+
+    <string name="transaction_description">Trocou %s por %s</string>
+    <string name="transaction_value_description">%s %s %s</string>
 </resources>

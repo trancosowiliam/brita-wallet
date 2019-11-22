@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.britawallet.R
 import br.com.britawallet.base.extensions.injectPresenter
 import br.com.britawallet.base.extensions.setSafeOnClickListener
+import br.com.britawallet.base.extensions.showTodoDialog
 import br.com.britawallet.base.extensions.toCurrency
 import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.User
@@ -95,6 +96,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
 
         homeMenuBottom.bmhBtnHistory.setSafeOnClickListener {
             presenter.onHistory()
+        }
+
+        walletAdapter.onItemAddClick = {
+            showTodoDialog()
         }
     }
 

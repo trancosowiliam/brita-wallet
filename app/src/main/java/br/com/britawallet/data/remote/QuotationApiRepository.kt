@@ -18,13 +18,18 @@ class QuotationApiRepository(
     private val dictionary: Dictionary
 ) : QuotationRepository {
 
+    private val yesterday
+        get() = Calendar.getInstance().apply {
+            add(Calendar.DATE, -1)
+        }.time
+
     override suspend fun getQuotation(): ServiceResponse<List<Currency>> {
         val quotationBtc = mercadoBitcoinApi.getBitcoin()
             .awaitResult()
             .getBodyOrNull()
             ?.quotation()
 
-        val quotationBtr = bancoCentralApi.getDolar("'${Date().MMddyyyy()}'")
+        val quotationBtr = bancoCentralApi.getDolar("'${yesterday.MMddyyyy()}'")
             .awaitResult()
             .getBodyOrNull()
             ?.quotation()

@@ -8,6 +8,7 @@ import android.graphics.drawable.ShapeDrawable
 import android.os.SystemClock
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 
@@ -48,6 +49,10 @@ fun AppCompatEditText.onActionListener(function: () -> Unit) {
             else -> return@setOnEditorActionListener false
         }
     }
+}
+
+fun TextView.setResTextColor(resColor: Int) {
+    setTextColor(ContextCompat.getColor(this.context, resColor))
 }
 
 fun Drawable?.setColor(context: Context, resColor: Int) {

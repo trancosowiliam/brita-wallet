@@ -72,6 +72,11 @@
         <item name="android:layout_height">1dp</item>
     </style>
 
+    <style name="RecyclerView">
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
     <!-- panels -->
     <style name="Panel">
         <item name="layout_constraintEnd_toEndOf">parent</item>

@@ -66,8 +66,13 @@
     <dimen name="exchange_width_switch">42dp</dimen>
 
     <!-- profile -->
-    <dimen name="profile_size_font_user_name">16sp</dimen>
+    <dimen name="profile_size_font_user_name">18sp</dimen>
     <dimen name="profile_size_font_user_description">10sp</dimen>
     <dimen name="profile_size_font_footer">11sp</dimen>
+
+    <!-- transaction -->
+    <dimen name="transaction_margin_actions">8dp</dimen>
+    <dimen name="transaction_margin_symbols">3dp</dimen>
+    <dimen name="transaction_size_icon">28dp</dimen>
 
 </resources>

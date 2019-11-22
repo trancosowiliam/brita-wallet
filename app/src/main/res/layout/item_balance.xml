@@ -58,11 +58,14 @@
             app:barrierDirection="end"
             app:constraint_referenced_ids="ibaTxtCurrency,ibaLblCurrency" />
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ibaBtnAdd"
-            style="@style/ButtonActionInBox"
+            style="@style/Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_translucent_box"
+            android:gravity="center"
+            android:text="+"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,11 +76,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="end|center_vertical"
-            tools:text="$ 999,99"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ibaBtnAdd"
             app:layout_constraintStart_toStartOf="@id/ibaBarrierEndCurrencyDescription"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$ 999,99" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

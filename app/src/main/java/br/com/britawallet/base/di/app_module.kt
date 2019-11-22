@@ -64,7 +64,9 @@ val appModule = module {
 
     factory { (view: HistoryContract.View) ->
         HistoryPresenter(
-            view = view
+            view = view,
+            staticResources = get(),
+            transactionRemoteRepository = get()
         )
     } bind HistoryContract.Presenter::class
 }

@@ -6,12 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".feature.history.HistoryActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
+    <br.com.britawallet.view.WalletToolbar
+        android:id="@+id/traToolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:wt_background="@color/color_background_light_actionbar"
+        app:wt_separatorColor="@android:color/transparent"
+        app:wt_textLabelColor="@color/color_text_label_light_actionbar"
+        app:wt_textValueColor="@color/color_text_value_actionbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/traRecWallet"
+        style="@style/RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/margin_xxxlarge"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/traToolbar"
+        tools:itemCount="8"
+        tools:listitem="@layout/item_transaction" />
 </androidx.constraintlayout.widget.ConstraintLayout>
