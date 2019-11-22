@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.britawallet.R
 import br.com.britawallet.base.extensions.setColor
+import br.com.britawallet.base.extensions.setResTextColor
 import br.com.britawallet.base.extensions.setSafeOnClickListener
 import br.com.britawallet.base.extensions.toCurrency
 import kotlinx.android.synthetic.main.item_balance.view.*
@@ -48,6 +49,7 @@ class WalletAdapter : RecyclerView.Adapter<WalletAdapter.WalletHolder>() {
             itemView.ibaLblCurrency.text = item.description
             itemView.ibaTxtValue.text = item.quantity.toCurrency(item.symbol)
             itemView.ibaCardContainer.background.setColor(itemView.context, item.color)
+            itemView.ibaBtnAdd.setResTextColor(item.color)
 
             itemView.ibaImgCurrencySymbol.setImageResource(item.icon)
         }

@@ -10,7 +10,7 @@
     <color name="color_translucent_overlay">#88000000</color>
     <color name="color_background_dark">#081B12</color>
     <color name="color_background_dark_gradient">#133a2a</color>
-    <color name="color_critical_link">#b92327</color>
+    <color name="color_critical_link">#b22228</color>
 
     <!-- currency -->
     <color name="color_currency_brl">#074D16</color>
@@ -39,6 +39,7 @@
     <color name="color_stroke_edit">@color/color_stroke</color>
 
     <!-- separator -->
+    <color name="color_separator">#BBCCCCCC</color>
     <color name="color_light_separator">#43534d</color>
     <color name="color_stroke">#D9D9D9</color>
 
@@ -50,5 +51,9 @@
     <color name="color_background_light_actionbar">#F2F3F3</color>
     <color name="color_text_label_light_actionbar">#909090</color>
     <color name="color_text_value_actionbar">@color/color_text</color>
+
+    <!-- transcation -->
+    <color name="color_minus">#b22228</color>
+    <color name="color_add">#22b24c</color>
 
 </resources>

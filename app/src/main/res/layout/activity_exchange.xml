@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_xxsmall"
-            app:srcCompat="@drawable/btn_currency_btc" />
+            app:srcCompat="@drawable/btn_currency_brl" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_xxsmall"
-            app:srcCompat="@drawable/btn_currency_brl" />
+            app:srcCompat="@drawable/btn_currency_btc" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
