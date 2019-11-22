@@ -10,6 +10,7 @@
     <color name="color_translucent_overlay">#88000000</color>
     <color name="color_background_dark">#081B12</color>
     <color name="color_background_dark_gradient">#133a2a</color>
+    <color name="color_critical_link">#b92327</color>
 
     <!-- currency -->
     <color name="color_currency_brl">#074D16</color>
@@ -19,6 +20,7 @@
 
     <!-- text -->
     <color name="color_text">#333333</color>
+    <color name="color_text_secundary">#555555</color>
     <color name="color_text_opaque">#999999</color>
     <color name="color_text_light">#FFFFFF</color>
 

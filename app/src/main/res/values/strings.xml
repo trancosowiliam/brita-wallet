@@ -49,4 +49,9 @@
     <string name="exchange_confirme_message">Deseja efetuar a transação?</string>
     <string name="exchange_insufficient_funds">Saldo insuficiente</string>
     <string name="exchange_success">Transação efetuada com sucesso</string>
+
+    <string name="profile_delete_account"><u>Excluir minha conta</u></string>
+    <string name="profile_logout">Sair</string>
+    <string name="profile_todo_description">Membro desde 2019</string>
+    <string name="profile_app_description">\@ 2019 Stone Wallet | Versão %s</string>
 </resources>

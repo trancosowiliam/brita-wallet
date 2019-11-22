@@ -14,6 +14,7 @@ import br.com.britawallet.data.model.Currency
 import br.com.britawallet.data.model.User
 import br.com.britawallet.feature.exchange.ExchangeActivity
 import br.com.britawallet.feature.history.HistoryActivity
+import br.com.britawallet.feature.login.LoginActivity
 import br.com.britawallet.feature.profile.ProfileActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_menu_home.view.*
@@ -38,8 +39,17 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode != Activity.RESULT_OK) {
+            super.onActivityResult(requestCode, resultCode, data)
+            return
+        }
+
         when {
-            resultCode == Activity.RESULT_OK && ExchangeActivity.isOrigin(requestCode) -> presenter.loadWallet()
+            ExchangeActivity.isOrigin(requestCode) -> presenter.loadWallet()
+            ProfileActivity.isOrigin(requestCode) -> {
+                startActivity(LoginActivity(this))
+                finish()
+            }
             else -> super.onActivityResult(requestCode, resultCode, data)
         }
     }
@@ -56,7 +66,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun goToProfile() {
-        startActivity(ProfileActivity(this))
+        ProfileActivity.startActivityForResult(this)
     }
 
     override fun goToExchange() {

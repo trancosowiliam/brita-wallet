@@ -6,12 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".feature.profile.ProfileActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/proBtnProfile"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:paddingTop="@dimen/margin_xxxlarge"
+        android:paddingBottom="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/proImgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/proTxtUser"
+            style="@style/Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxlarge"
+            android:layout_marginEnd="@dimen/margin_xsmall"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="@dimen/profile_size_font_user_name"
+            app:layout_constraintBottom_toTopOf="@id/proTxtDescription"
+            app:layout_constraintEnd_toStartOf="@id/proBtnEdit"
+            app:layout_constraintStart_toEndOf="@id/proImgUser"
+            app:layout_constraintTop_toTopOf="@id/proImgUser"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Jefferson Leutério" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/proTxtDescription"
+            style="@style/Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xsmall"
+            android:text="@string/profile_todo_description"
+            android:textColor="@color/color_text_secundary"
+            android:textSize="@dimen/profile_size_font_user_description"
+            app:layout_constraintBottom_toBottomOf="@id/proImgUser"
+            app:layout_constraintEnd_toStartOf="@id/proBtnEdit"
+            app:layout_constraintStart_toStartOf="@id/proTxtUser"
+            app:layout_constraintTop_toBottomOf="@id/proTxtUser" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/proBtnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="@id/proImgUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/proImgUser"
+            app:srcCompat="@drawable/ic_edit_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/proBtnLogout"
+        style="@style/Button.Normal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_component"
+        android:layout_marginBottom="@dimen/margin_xxxlarge"
+        android:text="@string/profile_logout"
+        app:layout_constraintBottom_toTopOf="@id/proBtnDeleteAcconout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/proBtnDeleteAcconout"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:gravity="center_horizontal"
+        android:text="@string/profile_delete_account"
+        android:textColor="@color/color_critical_link"
+        android:textSize="@dimen/profile_size_font_footer"
+        app:layout_constraintBottom_toTopOf="@id/proLblAppDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/proLblAppDescription"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_text_secundary"
+        android:textSize="@dimen/profile_size_font_footer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:text="\@ 2019 Stone Wallet | Versão 0.001" />
 </androidx.constraintlayout.widget.ConstraintLayout>

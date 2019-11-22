@@ -9,4 +9,7 @@ class MockAnalytics : Analytics {
     override fun onProfile() {}
     override fun onExchange() {}
     override fun onHistory() {}
+    override fun onLogout(login: String) {}
+    override fun onEditUser(login: String) {}
+    override fun onDeleteAccount(login: String) {}
 }
